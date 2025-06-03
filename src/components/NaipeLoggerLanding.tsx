@@ -626,7 +626,6 @@ const NaipeLoggerLanding: React.FC = () => {
                                     className="block text-gray-400 hover:text-white transition-colors"
                                 >
                                     Documentação
-
                                 </a>
                             </div>
                         </div>
