@@ -25,6 +25,7 @@ import template from '../assets/template.png';
 import timelog from '../assets/timelog.png';
 
 
+
 interface Feature {
     icon: React.ReactNode;
     title: string;
