@@ -620,7 +620,7 @@ const NaipeLoggerLanding: React.FC = () => {
                                     Suporte
                                 </a>
                                 <a
-                                    href="https://github.com/eddie-naipes/naipe-logger/blob/main/README.md"
+                                    href="https://github.com/eddie-naipes/naipe-logger/blob/master/README.md"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-gray-400 hover:text-white transition-colors"
