@@ -14,6 +14,7 @@ interface ReleaseData {
     assets: Asset[];
 }
 
+
 interface DownloadInfo {
     url: string;
     size: number;
