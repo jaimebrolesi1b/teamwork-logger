@@ -180,10 +180,11 @@ const NaipeLoggerLanding: React.FC = () => {
         }
     ];
 
-    const handleDownload = (platform: 'windows' | 'linux') => {
+    const handleDownload = (platform: 'windows' | 'linux' | 'windows-direct') => {
         const downloadUrls = {
-            windows: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/teamwork-logger.exe',
-            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-linux.AppImage'
+            windows: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/NaipeLogger-Setup.exe',
+            'windows-direct': 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/teamwork-logger.exe',
+            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/NaipeLogger-Linux.AppImage'
         };
 
         window.open(downloadUrls[platform], '_blank');
