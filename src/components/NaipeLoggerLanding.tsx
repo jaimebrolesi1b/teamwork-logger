@@ -235,6 +235,7 @@ const NaipeLoggerLanding: React.FC = () => {
                         <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
                             Criado pela Naipe Sync Solutions para otimizar o tempo dos desenvolvedores.
                             Lance horas em múltiplos dias e projetos com apenas alguns cliques.
+
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
