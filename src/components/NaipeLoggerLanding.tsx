@@ -14,14 +14,16 @@ import {
     FiUsers,
     FiTrendingUp,
     FiAward,
-    FiBarChart2
+    FiBarChart2,
 } from 'react-icons/fi';
 
-import config from '../assets/config.png'
-import task from '../assets/task.png'
-import template from '../assets/template.png'
-import timelog from '../assets/timelog.png'
+import { SiApple } from 'react-icons/si';
 import logo from '../assets/appicon.png';
+import config from '../assets/config.png';
+import task from '../assets/task.png';
+import template from '../assets/template.png';
+import timelog from '../assets/timelog.png';
+
 
 interface Feature {
     icon: React.ReactNode;
@@ -79,7 +81,7 @@ const NaipeLoggerLanding: React.FC = () => {
         {
             icon: <FiZap className="w-8 h-8" />,
             title: "Interface Otimizada",
-            description: "Interface moderna e responsiva que torna o apontamento de horas uma tarefa simples e rápida."
+            description: "Interface moderna e responsiva com modo escuro que torna o apontamento uma tarefa simples."
         },
         {
             icon: <FiShield className="w-8 h-8" />,
@@ -89,7 +91,7 @@ const NaipeLoggerLanding: React.FC = () => {
         {
             icon: <FiBarChart2 className="w-8 h-8" />,
             title: "Relatórios Avançados",
-            description: "Exporte relatórios detalhados em PDF e acompanhe suas métricas de produtividade."
+            description: "Exporte relatórios detalhados em PDF e gerencie suas entradas de tempo facilmente."
         }
     ];
 
@@ -101,7 +103,8 @@ const NaipeLoggerLanding: React.FC = () => {
             details: [
                 "Insira seu email corporativo",
                 "Digite sua senha do Teamwork",
-                "Conexão automática com teamwork.onebrain.com.br"
+                "Conexão automática com teamwork.onebrain.com.br",
+                "Interface moderna com modo escuro"
             ]
         },
         {
@@ -111,6 +114,7 @@ const NaipeLoggerLanding: React.FC = () => {
             details: [
                 "Filtre tarefas por projeto",
                 "Configure múltiplas entradas de tempo",
+                "Defina dias da semana específicos",
                 "Salve tarefas para reutilização"
             ]
         },
@@ -121,6 +125,7 @@ const NaipeLoggerLanding: React.FC = () => {
             details: [
                 "Combine múltiplas tarefas",
                 "Defina padrões de apontamento",
+                "Aplique templates rapidamente",
                 "Reutilize em sprints futuras"
             ]
         },
@@ -131,6 +136,7 @@ const NaipeLoggerLanding: React.FC = () => {
             details: [
                 "Selecione o período de trabalho",
                 "Aplique templates ou tarefas individuais",
+                "Visualize calendário integrado",
                 "Execute o lançamento em lote"
             ]
         }
@@ -140,7 +146,7 @@ const NaipeLoggerLanding: React.FC = () => {
         { number: "95%", label: "Redução no tempo de apontamento" },
         { number: "100+", label: "Horas economizadas pela equipe" },
         { number: "50+", label: "Desenvolvedores usando" },
-        { number: "99%", label: "Satisfação dos usuários" }
+        { number: "3", label: "Plataformas suportadas" }
     ];
 
     const benefits: Benefit[] = [
@@ -156,15 +162,19 @@ const NaipeLoggerLanding: React.FC = () => {
         },
         {
             icon: <FiAward className="w-6 h-6" />,
-            title: "Qualidade de Vida",
-            description: "Menos tempo em tarefas administrativas, mais tempo codando"
+            title: "Multiplataforma",
+            description: "Disponível para Windows, Linux e macOS com builds automatizados"
         }
     ];
 
     const faqs: FAQ[] = [
         {
-            q: "O Naipe Logger é seguro?",
+            q: "O Teamwork Logger é seguro?",
             a: "Sim! Seus dados ficam apenas no seu computador, criptografados com AES-256. Não enviamos nenhuma informação para servidores externos."
+        },
+        {
+            q: "Em quais plataformas funciona?",
+            a: "Disponível para Windows (x64), Linux (AppImage) e macOS (Universal Binary - Intel + Apple Silicon)."
         },
         {
             q: "Funciona com qualquer instância do Teamwork?",
@@ -172,7 +182,7 @@ const NaipeLoggerLanding: React.FC = () => {
         },
         {
             q: "Preciso pagar para usar?",
-            a: "Não! O Naipe Logger é 100% gratuito e open source."
+            a: "Não! O Teamwork Logger é 100% gratuito e open source."
         },
         {
             q: "Como posso contribuir com o projeto?",
@@ -180,17 +190,15 @@ const NaipeLoggerLanding: React.FC = () => {
         }
     ];
 
-    const handleDownload = (platform: 'windows' | 'linux' | 'windows-direct') => {
+    const handleDownload = (platform: 'windows' | 'linux' | 'macos') => {
         const downloadUrls = {
-            windows: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/NaipeLogger-Setup.exe',
-            'windows-direct': 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/teamwork-logger.exe',
-            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-linux.AppImage'
+            windows: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/teamwork-logger.exe',
+            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-linux.AppImage',
+            macos: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-macos.dmg'
         };
 
         window.open(downloadUrls[platform], '_blank');
     };
-
-
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -201,11 +209,16 @@ const NaipeLoggerLanding: React.FC = () => {
                             <div className="flex items-center justify-center">
                                 <img
                                     src={logo}
-                                    alt="Naipe Logger"
+                                    alt="Teamwork Logger"
                                     className="h-12 w-auto object-contain"
                                 />
                             </div>
-                            <span className="text-xl font-bold text-gray-900 dark:text-white">Naipe Logger</span>
+                            <div>
+                                <span className="text-xl font-bold text-gray-900 dark:text-white">Teamwork Logger</span>
+                                <span className="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full">
+                                    v1.1.4
+                                </span>
+                            </div>
                         </div>
                         <div className="flex items-center space-x-4">
                             <a
@@ -238,7 +251,6 @@ const NaipeLoggerLanding: React.FC = () => {
                         <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
                             Criado pela Naipe Sync Solutions para otimizar o tempo dos desenvolvedores.
                             Lance horas em múltiplos dias e projetos com apenas alguns cliques.
-
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
@@ -255,6 +267,20 @@ const NaipeLoggerLanding: React.FC = () => {
                                 <FiPlay className="w-5 h-5" />
                                 <span>Ver Tutorial</span>
                             </button>
+                        </div>
+                        <div className="mt-8 flex justify-center items-center space-x-8 text-blue-200">
+                            <div className="flex items-center space-x-2">
+                                <FiMonitor className="w-5 h-5" />
+                                <span>Windows</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <FiSmartphone className="w-5 h-5" />
+                                <span>Linux</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <SiApple className="w-5 h-5" />
+                                <span>macOS</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -306,7 +332,7 @@ const NaipeLoggerLanding: React.FC = () => {
                         </div>
                         <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                                Nossa Solução
+                                Nossa Solução v1.1.4
                             </h3>
                             <div className="space-y-4">
                                 {benefits.map((benefit, index) => (
@@ -373,7 +399,6 @@ const NaipeLoggerLanding: React.FC = () => {
                         </p>
                     </div>
 
-                    {/* Screenshot Display - Agora no topo */}
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-12">
                         <div className="rounded-lg overflow-hidden">
                             <img
@@ -395,15 +420,11 @@ const NaipeLoggerLanding: React.FC = () => {
                                     <p className="text-gray-500 dark:text-gray-400">
                                         Screenshot: {tutorialSteps[activeStep].title}
                                     </p>
-                                    <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">
-                                        (Imagem não encontrada em assets/)
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Steps Navigation - Agora em baixo em grid */}
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {tutorialSteps.map((step, index) => (
                             <div
@@ -441,10 +462,10 @@ const NaipeLoggerLanding: React.FC = () => {
                         Pronto para Economizar Horas?
                     </h2>
                     <p className="text-xl mb-8 text-blue-100">
-                        Baixe gratuitamente e comece a usar hoje mesmo
+                        Baixe gratuitamente e comece a usar hoje mesmo - Agora disponível para todas as plataformas!
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                         <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
                             <FiMonitor className="w-12 h-12 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-3">Windows</h3>
@@ -470,28 +491,59 @@ const NaipeLoggerLanding: React.FC = () => {
                                 <span>Download AppImage</span>
                             </button>
                         </div>
+
+                        <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                            <SiApple className="w-12 h-12 mx-auto mb-4" />
+                            <h3 className="text-xl font-semibold mb-3">macOS</h3>
+                            <p className="text-blue-100 mb-4">Intel + Apple Silicon</p>
+                            <button
+                                onClick={() => handleDownload('macos')}
+                                className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold w-full flex items-center justify-center space-x-2 transition-colors"
+                            >
+                                <FiDownload className="w-5 h-5" />
+                                <span>Download .dmg</span>
+                            </button>
+                        </div>
                     </div>
 
-                    <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-xl max-w-2xl mx-auto">
-                        <h3 className="text-lg font-semibold mb-3">Requisitos do Sistema</h3>
-                        <div className="grid md:grid-cols-2 gap-4 text-sm text-blue-100">
+                    <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-xl max-w-4xl mx-auto">
+                        <h3 className="text-lg font-semibold mb-3">Novidades v1.1.4</h3>
+                        <div className="grid md:grid-cols-2 gap-6 text-sm text-blue-100">
                             <div>
-                                <h4 className="font-medium text-white">Windows:</h4>
+                                <h4 className="font-medium text-white mb-2">🆕 Suporte Multiplataforma:</h4>
                                 <ul className="space-y-1">
-                                    <li>• Windows 10/11</li>
-                                    <li>• 4GB RAM mínimo</li>
-                                    <li>• 100MB espaço em disco</li>
+                                    <li>• macOS Universal Binary (Intel + M1/M2)</li>
+                                    <li>• Builds automatizados via GitHub Actions</li>
+                                    <li>• Instaladores nativos para cada plataforma</li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-medium text-white">Linux:</h4>
+                                <h4 className="font-medium text-white mb-2">🔧 Melhorias:</h4>
                                 <ul className="space-y-1">
-                                    <li>• Ubuntu 18.04+ ou similar</li>
-                                    <li>• 4GB RAM mínimo</li>
-                                    <li>• 100MB espaço em disco</li>
+                                    <li>• Interface aprimorada</li>
+                                    <li>• Performance otimizada</li>
+                                    <li>• Correções de bugs importantes</li>
                                 </ul>
                             </div>
                         </div>
+                        <div className="mt-4 p-4 bg-yellow-500/20 rounded-lg">
+                            <p className="text-yellow-200 text-sm">
+                                <strong>Nota para macOS:</strong> Na primeira execução, clique com botão direito → "Abrir" para contornar o aviso de segurança.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 text-center">
+                        <p className="text-blue-200 mb-4">Requisitos mínimos: 4GB RAM • 100MB espaço • Conexão com internet</p>
+                        <a
+                            href="https://github.com/eddie-naipes/naipe-logger/releases/tag/v1.1.4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-blue-200 hover:text-white transition-colors"
+                        >
+                            <FiGithub className="w-4 h-4 mr-2" />
+                            Ver todas as versões no GitHub
+                        </a>
                     </div>
                 </div>
             </section>
@@ -524,30 +576,55 @@ const NaipeLoggerLanding: React.FC = () => {
                                 <div className="flex items-center justify-center">
                                     <img
                                         src={logo}
-                                        alt="Naipe Logger"
+                                        alt="Teamwork Logger"
                                         className="h-12 w-auto object-contain"
                                     />
                                 </div>
-                                <span className="text-xl font-bold">Naipe Logger</span>
+                                <div>
+                                    <span className="text-xl font-bold">Teamwork Logger</span>
+                                    <span className="ml-2 px-2 py-1 text-xs bg-blue-600 text-white rounded-full">
+                                        v1.1.4
+                                    </span>
+                                </div>
                             </div>
                             <p className="text-gray-400">
-                                Ferramenta criada pela Naipe Sync Solutions para otimizar o apontamento de horas no Teamwork.
+                                Ferramenta multiplataforma criada pela Naipe Sync Solutions para otimizar o apontamento de horas no Teamwork.
                             </p>
                         </div>
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Links Úteis</h3>
                             <div className="space-y-2">
-                                <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                                    Documentação
+                                <a
+                                    href="https://github.com/eddie-naipes/naipe-logger/releases"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block text-gray-400 hover:text-white transition-colors"
+                                >
+                                    Releases
                                 </a>
-                                <a href="https://github.com/eddie-naipes/naipe-logger" className="block text-gray-400 hover:text-white transition-colors">
+                                <a
+                                    href="https://github.com/eddie-naipes/naipe-logger"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block text-gray-400 hover:text-white transition-colors"
+                                >
                                     GitHub
                                 </a>
-                                <a href="#" className="block text-gray-400 hover:text-white transition-colors">
+                                <a
+                                    href="https://github.com/eddie-naipes/naipe-logger/issues"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block text-gray-400 hover:text-white transition-colors"
+                                >
                                     Suporte
                                 </a>
-                                <a href="#" className="block text-gray-400 hover:text-white transition-colors">
-                                    Releases
+                                <a
+                                    href="https://github.com/eddie-naipes/naipe-logger/blob/main/README.md"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block text-gray-400 hover:text-white transition-colors"
+                                >
+                                    Documentação
                                 </a>
                             </div>
                         </div>
@@ -564,16 +641,47 @@ const NaipeLoggerLanding: React.FC = () => {
                             >
                                 onebrain.com.br
                                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2h-4M14 4h6m0 0v6m0-6L10 14" />
                                 </svg>
                             </a>
+                            <div className="mt-4">
+                                <h4 className="text-sm font-medium text-gray-300 mb-2">Plataformas Suportadas:</h4>
+                                <div className="flex space-x-4 text-sm text-gray-400">
+                                    <span className="flex items-center">
+                                        <FiMonitor className="w-4 h-4 mr-1" />
+                                        Windows
+                                    </span>
+                                    <span className="flex items-center">
+                                        <FiSmartphone className="w-4 h-4 mr-1" />
+                                        Linux
+                                    </span>
+                                    <span className="flex items-center">
+                                        <SiApple className="w-4 h-4 mr-1" />
+                                        macOS
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                         <p>&copy; 2025 Naipe Sync Solutions. Todos os direitos reservados.</p>
                         <p className="mt-2 text-sm">
-                            Naipe Logger é um projeto open source licenciado sob MIT License.
+                            Naipe Logger v1.1.4 é um projeto open source licenciado sob MIT License.
                         </p>
+                        <div className="mt-4 flex justify-center items-center space-x-6 text-xs">
+                            <span className="flex items-center">
+                                <FiShield className="w-3 h-3 mr-1" />
+                                Seguro e Local
+                            </span>
+                            <span className="flex items-center">
+                                <FiZap className="w-3 h-3 mr-1" />
+                                100% Gratuito
+                            </span>
+                            <span className="flex items-center">
+                                <FiGithub className="w-3 h-3 mr-1" />
+                                Open Source
+                            </span>
+                        </div>
                     </div>
                 </div>
             </footer>
