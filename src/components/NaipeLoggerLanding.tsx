@@ -184,7 +184,7 @@ const NaipeLoggerLanding: React.FC = () => {
         const downloadUrls = {
             windows: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/NaipeLogger-Setup.exe',
             'windows-direct': 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/teamwork-logger.exe',
-            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/NaipeLogger-Linux.AppImage'
+            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-linux.AppImage'
         };
 
         window.open(downloadUrls[platform], '_blank');
