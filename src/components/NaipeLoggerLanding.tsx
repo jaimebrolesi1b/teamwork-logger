@@ -217,7 +217,7 @@ const NaipeLoggerLanding: React.FC = () => {
                             <div>
                                 <span className="text-xl font-bold text-gray-900 dark:text-white">Teamwork Logger</span>
                                 <span className="ml-2 px-2 py-1 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full">
-                                    v1.1.4
+                                    v1.1.7
                                 </span>
                             </div>
                         </div>
@@ -334,7 +334,7 @@ const NaipeLoggerLanding: React.FC = () => {
                         </div>
                         <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                                Nossa Solução v1.1.4
+                                Nossa Solução v1.1.7
                             </h3>
                             <div className="space-y-4">
                                 {benefits.map((benefit, index) => (
@@ -509,7 +509,7 @@ const NaipeLoggerLanding: React.FC = () => {
                     </div>
 
                     <div className="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-xl max-w-4xl mx-auto">
-                        <h3 className="text-lg font-semibold mb-3">Novidades v1.1.4</h3>
+                        <h3 className="text-lg font-semibold mb-3">Novidades v1.1.7</h3>
                         <div className="grid md:grid-cols-2 gap-6 text-sm text-blue-100">
                             <div>
                                 <h4 className="font-medium text-white mb-2">🆕 Suporte Multiplataforma:</h4>
@@ -585,7 +585,7 @@ const NaipeLoggerLanding: React.FC = () => {
                                 <div>
                                     <span className="text-xl font-bold">Teamwork Logger</span>
                                     <span className="ml-2 px-2 py-1 text-xs bg-blue-600 text-white rounded-full">
-                                        v1.1.4
+                                        v1.1.7
                                     </span>
                                 </div>
                             </div>
@@ -668,7 +668,7 @@ const NaipeLoggerLanding: React.FC = () => {
                     <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                         <p>&copy; 2025 Naipe Sync Solutions. Todos os direitos reservados.</p>
                         <p className="mt-2 text-sm">
-                            Naipe Logger v1.1.4 é um projeto open source licenciado sob MIT License.
+                            Naipe Logger v1.1.7 é um projeto open source licenciado sob MIT License.
                         </p>
                         <div className="mt-4 flex justify-center items-center space-x-6 text-xs">
                             <span className="flex items-center">
