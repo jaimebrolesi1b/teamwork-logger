@@ -538,7 +538,7 @@ const NaipeLoggerLanding: React.FC = () => {
                     <div className="mt-8 text-center">
                         <p className="text-blue-200 mb-4">Requisitos mínimos: 4GB RAM • 100MB espaço • Conexão com internet</p>
                         <a
-                            href="https://github.com/jaimebrolesi1b/teamwork-logger/releases/tag/v1.1.4"
+                            href="https://github.com/eddie-naipes/naipe-logger/releases/tag/v1.1.7"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center text-blue-200 hover:text-white transition-colors"
@@ -597,7 +597,7 @@ const NaipeLoggerLanding: React.FC = () => {
                             <h3 className="text-lg font-semibold mb-4">Links Úteis</h3>
                             <div className="space-y-2">
                                 <a
-                                    href="https://github.com/jaimebrolesi1b/teamwork-logger/releases"
+                                    href="https://github.com/eddie-naipes/naipe-logger/releases"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-gray-400 hover:text-white transition-colors"
@@ -605,7 +605,7 @@ const NaipeLoggerLanding: React.FC = () => {
                                     Releases
                                 </a>
                                 <a
-                                    href="https://github.com/jaimebrolesi1b/teamwork-logger/"
+                                    href="https://github.com/eddie-naipes/naipe-logger/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-gray-400 hover:text-white transition-colors"
@@ -613,7 +613,7 @@ const NaipeLoggerLanding: React.FC = () => {
                                     GitHub
                                 </a>
                                 <a
-                                    href="https://github.com/jaimebrolesi1b/teamwork-logger/issues"
+                                    href="https://github.com/eddie-naipes/naipe-logger/issues"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-gray-400 hover:text-white transition-colors"
@@ -621,7 +621,7 @@ const NaipeLoggerLanding: React.FC = () => {
                                     Suporte
                                 </a>
                                 <a
-                                    href="https://github.com/jaimebrolesi1b/teamwork-logger/blob/master/README.md"
+                                    href="https://github.com/eddie-naipes/naipe-logger/README.md"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-gray-400 hover:text-white transition-colors"
