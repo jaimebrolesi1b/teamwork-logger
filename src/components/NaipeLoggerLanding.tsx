@@ -193,9 +193,9 @@ const NaipeLoggerLanding: React.FC = () => {
 
     const handleDownload = (platform: 'windows' | 'linux' | 'macos') => {
         const downloadUrls = {
-            windows: 'https://github.com/jaimebrolesi1b/teamwork-logger/releases/latest/download/teamwork-logger.exe',
-            linux: 'https://github.com/jaimebrolesi1b/teamwork-logger/releases/latest/download/naipe-logger-linux.AppImage',
-            macos: 'https://github.com/jaimebrolesi1b/teamwork-logger/releases/latest/download/naipe-logger-macos.dmg'
+            windows: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/teamwork-logger.exe',
+            linux: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-linux.AppImage',
+            macos: 'https://github.com/eddie-naipes/naipe-logger/releases/latest/download/naipe-logger-macos.dmg'
         };
 
         window.open(downloadUrls[platform], '_blank');
